@@ -1,0 +1,96 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Div25 Task Pane Add-in</title>
+
+    <!-- Fabric core styling (for icons) -->
+    <link
+      rel="stylesheet"
+      href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css"
+    />
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+    
+    <!-- Fluent UI: https://learn.microsoft.com/en-us/fluent-ui/web-components/getting-started/quick-start -->
+    <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter">
+        <img width="90" height="90" src="../../assets/D25_no-letters.png" alt="Div25 Logo" title="Div25 Logo" />
+        <h1 id="welcome-banner" class="ms-font-su small-spacing">Welcome</h1>
+        <h2 id="users-name" style="display: none;" class="ms-font-xl users-name small-spacing"></h2>
+
+        <h2 id="welcome-message" class="ms-font-xl">Please login to your Div25 Account </h2>
+        <h2 id="user-message-excel" style="display: none;" class="ms-font-lg small-spacing">Enhance your workflow with our Excel Add-in! </h2>
+        <h2 id="user-message-word" style="display: none;" class="ms-font-lg small-spacing">Enhance your workflow with our Word Add-in! </h2>
+        <a href="../../assets/README.html">Click for more info.</a>
+    </header>
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl">You are using an <a rel="noopener" target="_blank" href="https://learn.microsoft.com/en-us/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins#working-with-trident-internet-explorer-11">older version</a> of Office. Update Office to use this add-in.</h2>
+    </section>
+
+    <main id="app-body" class="ms-welcome__main" style="display: flex;">
+      <div id="userCredentials-container">
+        <fluent-text-field id="username" placeholder="username@domain.com" class="full-width">
+          Username
+        </fluent-text-field>
+        <fluent-tooltip anchor="username">Enter your Div25 username</fluent-tooltip>
+
+        <fluent-text-field id="password" placeholder="password" type="password" class="full-width">
+          Password
+        </fluent-text-field>
+        <fluent-tooltip anchor="password">Enter your Div25 password</fluent-tooltip>
+      </div>
+
+      <div role="button" id="log-in" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
+        <span class="ms-Button-label">Log In</span>
+      </div>
+      <div role="button" id="log-out" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl" hidden>
+        <span class="ms-Button-label">Log Out</span>
+      </div>
+
+      <div id="actionButtons-container" class="ms-welcome__main" style="display: flex;">
+        <div>
+          <fluent-number-field id="projectId" value="0">Project UUID:</fluent-number-field>
+          <fluent-tooltip anchor="projectId" position="top">You can find this in the URL of the project <br>
+              e.g.: sales.div25.com/project/{projectUUID}</fluent-tooltip>
+        </div>
+  
+        <div id="excel-buttons" class="flex-v">
+          <div class="flex">
+            <div class="button-spacing">
+              <fluent-button id="final-estimate" appearance="accent">Final Estimate</fluent-button>
+              <fluent-tooltip anchor="final-estimate" position="top">Download "Selected" Final Estimate</fluent-tooltip>
+            </div>
+      </div>
+    </main>
+
+    <div id="progressSpinnerOverlay" hidden>
+      <div class="progress-spinner-overlay">
+        <fluent-progress-ring></fluent-progress-ring>
+      </div>
+    </div>
+
+    <fluent-dialog id="defaultDialog" hidden trap-focus modal>
+      <div class="dialog">
+        <h2>Notice!</h2>
+        <p id="dialog-message">testing dialog!</p>
+        <fluent-button id="dialogCloser" appearance="accent" tabindex="0">Dismiss</fluent-button>
+      </div>
+    </fluent-dialog>
+</body>
+</html>
