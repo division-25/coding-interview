@@ -10,13 +10,13 @@
 			1. Add bundle as script: https://learn.microsoft.com/en-us/fluent-ui/web-components/getting-started/quick-start
 			2. Use the components in html: https://learn.microsoft.com/en-us/fluent-ui/web-components/components/overview
 	3. Use these credentials with the login
-		a. Username: augiel+interview@div25.com
-		b. Password: !123Div25
+		a. Username: ***************
+		b. Password: ***************
 	4. Complete implementation of refreshAuthToken function (admin.ts) (see API endpoint below)
 	5. On failed login attempt, clear the password fields text
 	6. Complete implementation of downloadFinalEstimate function (taskpane.ts): This function will put (in an Excel file) the names and sell prices of all alternates within the "Awarded" Final Estimate.
 		A. Complete implementation of getProjectInfoFromBaseEstimate function (admin.ts) (see API endpoint below)
-			1. Use the number input into the Project UUID field to call API
+			1. Use the number input into the Project UUID field to call API (type 22121 into the field)
 		B. Complete implementation of downloadFinalEstimates function (admin.ts) (see API endpoint below)
 			1. Use the number input into the Project UUID field to call API
 		C. Complete implementation of getFinalEstimate function (admin.ts) (see API endpoint below)
