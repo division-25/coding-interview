@@ -160,10 +160,10 @@ export function closeDialog() : void {
 export async function downloadFinalEstimate() {
   showSpinnerOverlay();
 
+  const projectId = Number.parseInt((<HTMLInputElement>document.getElementById("projectId")).value);
   /**
    * Add your code here
    */
-  const projectId = Number.parseInt((<HTMLInputElement>document.getElementById("projectId")).value);
-
+  
   showSpinnerOverlay(false);
 }
