@@ -1,6 +1,6 @@
 import { Estimate, FinalEstimateList, ProjectInfo, UserInfo } from "../model/model"
 
-const ADMIN_PANEL_BASE_ENDPOINT = "https://api.admin.div25.com/api/"
+const ADMIN_PANEL_BASE_ENDPOINT = "https://api.admin.div25.com/api"
 const ADMIN_PANEL_AUTHENTICATION_ENDPOINT = `${ADMIN_PANEL_BASE_ENDPOINT}/auth`
 let AUTHENTICATION_TOKEN: string = null
 
