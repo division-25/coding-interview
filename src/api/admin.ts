@@ -1,6 +1,7 @@
 import { Estimate, FinalEstimateList, ProjectInfo, UserInfo } from "../model/model"
 
-const ADMIN_PANEL_AUTHENTICATION_ENDPOINT = "https://api.admin.div25.com/api/auth"
+const ADMIN_PANEL_BASE_ENDPOINT = "https://api.admin.div25.com/api/"
+const ADMIN_PANEL_AUTHENTICATION_ENDPOINT = `${ADMIN_PANEL_BASE_ENDPOINT}/auth`
 let AUTHENTICATION_TOKEN: string = null
 
 
@@ -79,7 +80,7 @@ export async function refreshAuthToken(): Promise<string> {
  * @param estimateId 
  */
 export async function getProjectInfoFromBaseEstimate(estimateId: number): Promise<ProjectInfo> {
-  
+  // use ADMIN_PANEL_BASE_ENDPOINT to construct the endpoint URL
 }
 
 /**
@@ -87,15 +88,15 @@ export async function getProjectInfoFromBaseEstimate(estimateId: number): Promis
  * @param estimateId 
  */
 export async function getListProjectFinalEstimates(estimateId: number): Promise<FinalEstimateList> {
-
+// use ADMIN_PANEL_BASE_ENDPOINT to construct the endpoint URL
 }
 
 
 export async function getFinalEstimate(estimateId: number): Promise<any> {
-  
+  // use ADMIN_PANEL_BASE_ENDPOINT to construct the endpoint URL
 }
 
 
 export async function getProjectAlternateEstimate(estimateId: number): Promise<Estimate> {
-
+  // use ADMIN_PANEL_BASE_ENDPOINT to construct the endpoint URL
 }
