@@ -17,7 +17,7 @@
 	6. Complete implementation of downloadFinalEstimate function (taskpane.ts): This function will put (in an Excel file) the names and sell prices of all alternates within the "Awarded" Final Estimate.
 		A. Complete implementation of getProjectInfoFromBaseEstimate function (admin.ts) (see API endpoint below)
 			1. Use the number input into the Project UUID field to call API (type 22121 into the field)
-		B. Complete implementation of downloadFinalEstimates function (admin.ts) (see API endpoint below)
+		B. Complete implementation of getListProjectFinalEstimates function (admin.ts) (see API endpoint below)
 			1. Use the number input into the Project UUID field to call API
 		C. Complete implementation of getFinalEstimate function (admin.ts) (see API endpoint below)
 			1. Use the ID of the Final Estimate that has "isAwarded" === true (see previous step).
