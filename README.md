@@ -52,4 +52,9 @@ Use with getListProjectFinalEstimates()
 &nbsp;
 
 Use with getFinalEstimate()
+![image](https://github.com/user-attachments/assets/a7d0230c-5ca0-4f1d-881a-5956169b64ca)
+
+&nbsp;
+
+Use with getProjectAlternateEstimate()
 ![image](https://github.com/user-attachments/assets/30193a4b-f406-4831-b47c-a02744f7d30f)
